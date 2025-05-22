@@ -15,13 +15,17 @@
     "prisma:reset": "prisma migrate reset",
     "prisma:format": "prisma migrate format",
     "backend:db:generate": "cd tools/db-generate && go run main.go && cd ../../backend && rm -rf ./src/.gen/cdr-intelligence/public/table/table_use_schema.go",
-    "backend:dev": "cd backend && go run main.go"
+    "backend:dev": "cd backend && go run main.go",
+    "commitlint": "commitlint --edit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@types/node": "^22.15.21",
+    "husky": "^9.1.7",
     "prisma": "^6.8.2",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
