@@ -1,0 +1,12 @@
+type Project {
+  id: ID!
+  title: String!
+  description: String
+  createdAt: Time!
+  updatedAt: Time!
+}
+
+type Mutation {
+  createProject(title: String!): Project! @access
+  getProjectById(id: ID!): Project!
+}

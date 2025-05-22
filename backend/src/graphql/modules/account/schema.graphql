@@ -1,0 +1,15 @@
+type Account {
+  id: ID!
+  username: String!
+  createdAt: Time!
+  projectId: ID
+  permissions: [Permission!]!
+}
+
+type Query {
+  profile(projectId: ID!): Account! @access
+}
+
+type Mutation {
+  register(username: String!, password: String!): Account!
+}

@@ -1,0 +1,14 @@
+type ProjectRole {
+  id: ID!
+  projectId: ID!
+  title: String!
+}
+
+type Mutation {
+  createProjectRole(title: String!): ProjectRole!
+    @access(
+      requiredProjectId: true
+      subject: "Project"
+      ability: DELETE
+    )
+}

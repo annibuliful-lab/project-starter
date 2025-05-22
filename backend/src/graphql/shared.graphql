@@ -1,0 +1,13 @@
+scalar Time
+scalar Upload
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+directive @access(
+  requiredProjectId: Boolean
+  subject: String
+  ability: PermissionAbility
+) on FIELD_DEFINITION

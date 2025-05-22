@@ -1,0 +1,15 @@
+enum PermissionAbility {
+  CREATE
+  UPDATE
+  DELETE
+  READ
+  EXECUTE
+}
+
+type Permission {
+  id: ID!
+  name: String!
+  description: String
+  subject: String!
+  ability: PermissionAbility!
+}

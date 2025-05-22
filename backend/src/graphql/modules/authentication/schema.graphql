@@ -1,0 +1,17 @@
+type Authentication {
+  accountId: ID!
+  # account: Account
+  projectIds: [ID!]
+  token: String!
+  refreshToken: String!
+}
+
+type Logout {
+  success: Boolean!
+  message: String!
+}
+
+type Mutation {
+  login(username: String!, password: String!): Authentication!
+  logout: Logout!
+}
