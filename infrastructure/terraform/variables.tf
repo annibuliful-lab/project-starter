@@ -7,7 +7,7 @@ variable "region" {
   default = "sgp"
 }
 
-variable "kubernetes" {
+variable "k8s" {
   type = object({
     label           = string,
     node_quantity   = number
