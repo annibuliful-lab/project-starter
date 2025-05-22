@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "frontend:dev": "cd frontend && pnpm dev",
     "prisma:validate": "prisma validate",
