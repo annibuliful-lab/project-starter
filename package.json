@@ -4,9 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "frontend:dev": "cd frontend && pnpm dev",
+    "prisma:validate": "prisma validate",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "prisma:db-push": "prisma db push",
+    "prisma:db-pull": "prisma db pull",
+    "prisma:seed": "ts-node prisma/seed",
+    "prisma:reset": "prisma migrate reset",
+    "prisma:format": "prisma migrate format",
+    "backend:db:generate": "cd tools/db-generate && go run main.go && cd ../../backend && rm -rf ./src/.gen/cdr-intelligence/public/table/table_use_schema.go",
+    "backend:dev": "cd backend && go run main.go"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "prisma": "^6.8.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@prisma/client": "6.8.2"
+  }
 }

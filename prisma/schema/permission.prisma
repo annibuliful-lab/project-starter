@@ -1,0 +1,29 @@
+enum PermissionAbility {
+    // Grants the ability to read/view resources.
+    READ
+
+    // Grants the ability to update/modify existing resources.
+    UPDATE
+
+    // Grants the ability to delete/remove resources.
+    DELETE
+
+    // Grants the ability to create new entities/resources.
+    CREATE
+
+    // Grants the ability to execute an action or process.
+    EXECUTE
+}
+
+model Permission {
+    id                    String                  @id @db.Uuid
+    name                  String
+    description           String?
+    subject               String
+    ability               PermissionAbility
+    createdAt             DateTime                @default(now())
+    updatedAt             DateTime                @updatedAt
+    ProjectRolePermission ProjectRolePermission[]
+
+    @@unique([subject, ability, name])
+}
